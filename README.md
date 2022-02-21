@@ -1,24 +1,18 @@
-# testvue
+# Quiz App VueJS frontend
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## Serve
+#### Compiles and hot-reloads for development and autofix issues
 ```
 npm run serve --fix
 ```
 
-### Compiles and minifies for production
+## Build
+#### Compiles and minifies for production
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

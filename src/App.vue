@@ -1,28 +1,31 @@
 <template>
   <div id="app">
-    <img alt="App logo" src="./assets/logo.png">
+    <img alt="App logo" src="./assets/logo.png" />
     <welcome></welcome>
-    <quiz></quiz>
     <new-quiz-button></new-quiz-button>
+    <quiz></quiz>
+    <!--button @click="getNewQuiz()"><button>
+    <quiz :questions='myQuiz' > </quiz -->
 
   </div>
 </template>
 
-<script>
-import Welcome from './components/Welcome.vue'
-import NewQuizButton from './components/NewQuizButton.vue'
-import Quiz from './components/Quiz.vue'
 
+<script>
+import Welcome from "./components/Welcome.vue";
+import NewQuizButton from "./components/NewQuizButton.vue";
+import Quiz from "./components/Quiz.vue";
 
 export default {
-  name: 'App',
+  name: "App",
+
   components: {
     Welcome,
     NewQuizButton,
-    Quiz
-    
-  }
-}
+    Quiz,
+  },
+  props:["randomQuiz"]
+};
 </script>
 
 <style>

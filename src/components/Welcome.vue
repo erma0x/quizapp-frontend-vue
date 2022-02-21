@@ -1,5 +1,5 @@
 <template>
-  <div class="welcome">
+  <div id="Welcome" class="welcome">
     <h1>Hello {{ user }}</h1>
   </div>
 </template>

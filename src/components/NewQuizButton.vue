@@ -1,32 +1,19 @@
 <template>
   <div id="NewQuizButton" class="new-quiz-button">
-    <button v-on:click="getNewQuiz()" class="btn btn-primary">
-      New Quiz
-    </button>
+    <button v-on:click="getNewQuiz" class="btn btn-primary">New Quiz</button>
   </div>
 </template>
 
 <script>
+//import routes from '../routes'
+//import getNewQuiz from '../helpers.js'
 export default {
-  el: "NewQuizButton",
-
+  name: "NewQuizButton",
+  
   data() {
     return {
-      randomTest:{
-        name:'randomTest',
-        default:this.getNewQuiz(),
-      },
+      newTest: false,
     };
-  },
-  methods: {
-    async getNewQuiz() {
-      const url = "http://localhost:3001/quiz";
-      let response = await fetch(url, { method: "GET" });
-      let randomTest = await response.json();
-      console.log(randomTest)
-      this.$emit('myEvent')
-      return randomTest; //this$emit
-    },
   },
 };
 </script>

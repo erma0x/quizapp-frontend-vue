@@ -6,13 +6,13 @@ npm install
 ```
 
 ## Serve
-#### Compiles and hot-reloads for development and autofix issues
+Compiles and hot-reloads for development and autofix issues
 ```
 npm run serve --fix
 ```
 
 ## Build
-#### Compiles and minifies for production
+Compiles and minifies for production
 ```
 npm run build
 ```

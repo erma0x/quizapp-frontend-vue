@@ -1,0 +1,4 @@
+{
+    "api_get_quiz": "http://localhost:3001/quiz",
+    "api_post_quiz": "http://localhost:3001/checkbox/"
+}

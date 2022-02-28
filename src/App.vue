@@ -1,30 +1,42 @@
 <template>
   <div id="app">
     <img alt="App logo" src="./assets/logo.png" />
-    <welcome></welcome>
-    <new-quiz-button></new-quiz-button>
-    <quiz></quiz>
-    <!--button @click="getNewQuiz()"><button>
-    <quiz :questions='myQuiz' > </quiz -->
-
+    <Welcome></Welcome>
+    <button @click="getNewQuiz" class="btn btn-primary">New Quiz</button>
+    <Quiz :questions="quizzes"> </Quiz>
+    <Footer :title="copyrightTitle"></Footer>
   </div>
 </template>
 
 
 <script>
 import Welcome from "./components/Welcome.vue";
-import NewQuizButton from "./components/NewQuizButton.vue";
 import Quiz from "./components/Quiz.vue";
+import Footer from "./components/Footer.vue";
+import getNewQuiz from "./helpers.js";
 
 export default {
   name: "App",
 
+  data() {
+    return {
+      username: "Admin",
+      copyrightTitle: "Skillbill",
+      quizzes: [],
+    };
+  },
+  methods: {
+    getNewQuiz: async function () {
+      this.quizzes = await getNewQuiz();
+      console.log("nuovi quiz trovati ", this.quizzes);
+    },
+  },
+
   components: {
     Welcome,
-    NewQuizButton,
     Quiz,
+    Footer,
   },
-  props:["randomQuiz"]
 };
 </script>
 

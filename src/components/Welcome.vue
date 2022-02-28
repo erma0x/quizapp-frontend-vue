@@ -10,7 +10,7 @@ export default {
   props: {
     user: {
       type: String,
-      default: "Ermano",
+      default: "Admin",
     },
 
   },

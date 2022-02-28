@@ -1,4 +1,3 @@
-
 let data
 
 export async function getConfig() {
@@ -20,32 +19,23 @@ export async function get(url) {
     return res
 }
 
-
-export async function post(url) {
+export async function post(url,body) {
     let response = await fetch(url, {
-        method: "POST",
-        body: {},
-        headers: {}
-    });
+            method: "POST",
+            body: JSON.stringify(body),
+            headers: { "content-type": "application/json" },
+        });
     let res = await response.json();
     return res
 }
 
-export async function getNewQuiz() {
-    let response = await fetch(data.api_get_quiz, {
-        method: "GET",
-    });
-    let quizzes = await response.json();
+export default async function getNewQuiz() {
+    let quizzes = await get(data.api_get_quiz);
     return quizzes
 }
 
 export async function getScore(quizAnswers) {
     // quizAnswers {id-quiz : number-answer} => score %
-    let response = await fetch(data.api_post_quiz, {
-        method: "POST",
-        body: JSON.stringify(quizAnswers),
-        headers: { "content-type": "application/json" },
-    });
-    let quizScore = await response.json();
+    let quizScore = await post(data.api_post_quiz,quizAnswers);
     return quizScore;
 }

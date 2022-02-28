@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="App logo" src="./assets/logo.png" />
     <Welcome></Welcome>
-    <button @click="getNewQuiz" class="btn btn-primary">New Quiz</button>
+    <button @click="getQuiz" class="btn btn-primary">New Quiz</button>
     <Quiz :questions="quizzes"> </Quiz>
     <Footer :title="copyrightTitle"></Footer>
   </div>
@@ -22,13 +22,13 @@ export default {
     return {
       username: "Admin",
       copyrightTitle: "Skillbill",
-      quizzes: [],
-    };
+      quizzes:[],
+};
   },
   methods: {
-    getNewQuiz: async function () {
+    getQuiz: async function () {
       this.quizzes = await getNewQuiz();
-      console.log("nuovi quiz trovati ", this.quizzes);
+      console.log("New quiz incoming ", this.quizzes);
     },
   },
 

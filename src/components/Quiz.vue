@@ -28,27 +28,25 @@
 <script>
 export default {
   name: "Quiz",
+
   data() {
     return {
       quizzes: {
         type: Array,
-        required: true,
+        default : []
       },
       quizScore: {
         type: Number,
-        required: true,
         default: 0,
       },
 
       getQuizURL: {
         type: String,
-        required: true,
         default: "http://localhost:3001/quiz",
       },
 
       postAnswersURL: {
         type: String,
-        required: true,
         default: "http://localhost:3001/checkbox/",
       },
     };

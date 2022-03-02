@@ -1,40 +1,62 @@
 <template>
-  <form v-on:click="getNewQuiz()" id="Quiz" class="quiz">
-    <button v-on:click="getScore()" type="submit" class="btn btn-primary">
+  <form id="Quiz" class="quiz">
+    <button v-on:click="getScore(reply)" type="submit" class="btn btn-primary">
       Submit Quiz
     </button>
     <br />
-    <div v-for="quiz in quizzes" v-bind:key="quiz.id">
-      <label hidden>{{ quiz.id }}</label>
-      {{ quiz.question }}
+    <div v-for="single_quiz in questions" v-bind:key="single_quiz.id">
+      question id {{ single_quiz.id }} :
+      {{ single_quiz.question }}
       <br />
-      <div id="quiz.id">
-        <div v-for="answer in quiz.answers" :key="answer.id">
-          <input
-            type="radio"
-            id="quiz.id"
-            value="quiz.id"
-            required="true"
-            checked
-          />
-          <label>{{ answer }}</label>
-          <br />
-        </div>
+
+      <div v-for="answer in single_quiz.answers" :key="answer">
+        <br />
+        <input
+          type="radio"
+          value="index"
+          v-model="single_quiz.value"
+          name="single_quiz.id"
+          placeholder="answer"
+          required="true"
+          checked
+        />
+        {{ answer }}
       </div>
+      <br />
     </div>
   </form>
 </template>
+
+      <!-- //{{ answer }} -->
+      <!-- 
+questions:Array
+
+id:0
+question:"How many planets are there in the solar system?"
+answers:Array[4]
+  0:"risposta1"
+  1:"risposta2"
+  2:"risposta3"
+  3:"risposta4" -->
+
+      <!-- 
+ <div v-for="element in elements" class="uk-form-row uk-margin-small-top">
+     <input v-model="element.value" class="uk-width-1-1 uk-form-small" type="text" placeholder="element" style="width:50%">
+  </div> -->
+
 
 <script>
 export default {
   name: "Quiz",
 
+  props: { questions: Array, score: Number },
   data() {
     return {
-      quizzes: {
-        type: Array,
-        default : []
+      reply: {
+        type: Object,
+        default: {},
       },
+
       quizScore: {
         type: Number,
         default: 0,

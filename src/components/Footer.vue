@@ -22,7 +22,7 @@ div {
   text-align: center;
 }
 p {
-  color: lightgreen;
+  color: rgb(0, 8, 77);
   text-align: center;
 }
 </style>

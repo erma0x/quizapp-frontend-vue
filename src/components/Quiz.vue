@@ -27,29 +27,26 @@
   </form>
 </template>
 
-      <!-- //{{ answer }} -->
-      <!-- 
-questions:Array
-
-id:0
-question:"How many planets are there in the solar system?"
-answers:Array[4]
-  0:"risposta1"
-  1:"risposta2"
-  2:"risposta3"
-  3:"risposta4" -->
-
-      <!-- 
- <div v-for="element in elements" class="uk-form-row uk-margin-small-top">
-     <input v-model="element.value" class="uk-width-1-1 uk-form-small" type="text" placeholder="element" style="width:50%">
-  </div> -->
-
-
 <script>
 export default {
+  //
+  // data : reply
+  // props : questions, score
+
+  // with GET quiz you get the followig array of objects
+  // each has an id, question, and answers
+  // id:0
+  // question:"How many planets are there in the solar system?"
+  // answers:Array[4]
+  //   0:"answer1"
+  //   1:"answer2"
+  //   2:"answer3"
+  //   3:"answer4"
+
   name: "Quiz",
 
   props: { questions: Array, score: Number },
+
   data() {
     return {
       reply: {
@@ -57,26 +54,13 @@ export default {
         default: {},
       },
 
-      quizScore: {
-        type: Number,
-        default: 0,
-      },
-
-      getQuizURL: {
-        type: String,
-        default: "http://localhost:3001/quiz",
-      },
-
-      postAnswersURL: {
-        type: String,
-        default: "http://localhost:3001/checkbox/",
-      },
+      getQuizURL: "http://localhost:3001/quiz",
+      postAnswersURL: "http://localhost:3001/checkbox/",
     };
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 div {
   font-size: 10;

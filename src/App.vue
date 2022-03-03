@@ -21,23 +21,22 @@ export default {
   data() {
     return {
       username: "Admin",
-      copyrightTitle: "Skillbill s.r.l",
-      quizzes:[],
-      score:0
-    }
+      copyrightTitle: "Skillbill s.r.l.",
+      quizzes: [],
+      score: 0,
+    };
   },
   methods: {
     getQuiz: async function () {
       this.quizzes = await getNewQuiz();
       console.log("New quiz incoming ", this.quizzes);
-    }
+    },
   },
 
   computed: {
     getNewQuiz() {
-      // `this` points to the component instance
       return this.quizzes;
-    }
+    },
   },
 
   components: {

@@ -6,13 +6,12 @@ Vue.use(VueRouter);
 export const routes = [
   {
     path: "/",
-    redirect: "/home",
+    redirect: "/"
   }
 ];
 
-
 const router = new VueRouter({
-  routes,
+  routes
 });
 
 export default router;
